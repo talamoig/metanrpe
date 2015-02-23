@@ -37,11 +37,12 @@ def getincludedirs(fname):
     global includedirpattern
     return getwithpattern(fname,includedirpattern)
 
+checklist=[]
 while len(files)>0:
     f=files.pop()
     checks=getchecks(f)
     for c in checks:
-        print c
+        checklist.append(c)
     dirs=getincludedirs(f)
     for d in dirs:
         for filename in listdir(d):
@@ -50,3 +51,6 @@ while len(files)>0:
     for includefile in getincludes(f):
         files.append(includefile)
 
+checklist=set(checklist)
+for c in checklist:
+    print c

@@ -2,8 +2,8 @@
 
 Python script that prints out all the nrpe-callable checks available
 on localhost. The checks are obtained from the standard
-`/etc/nagios/nrpe.cfg` file (or a different) file is passed as
-argument and recursively from files and directories included with the
+`/etc/nagios/nrpe.cfg` file (or a file passed as argument) and
+recursively from files and directories included with the
 `include` and `include_dir` directives.
 
 This script can be used to let remote servers (tipically a

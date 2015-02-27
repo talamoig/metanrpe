@@ -1,6 +1,7 @@
 #!/bin/env python
 
 import re
+import sys
 from os import listdir
 from os.path import isfile, join
 
@@ -13,6 +14,12 @@ includepattern=re.compile(includere)
 includedirpattern=re.compile(includedirre)
 
 files=["/etc/nagios/nrpe.cfg"]
+
+if len(sys.argv)>2:
+    sys.exit("Usage: %s [filename]"%sys.argv[0])
+
+if len(sys.argv)==2:
+    files=[sys.argv[1]]
 
 def getwithpattern(fname,pattern):
     checks=[]

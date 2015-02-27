@@ -1,11 +1,13 @@
 ## metanrpe
 
-Python script that prints out all the nrpe-callable checks available on the localhost.
-The checks are obtained from the standard `/etc/nagios/nrpe.cfg` file and following
-`include` and `include_dir` directives if any.
+Python script that prints out all the nrpe-callable checks available
+on localhost. The checks are obtained from the standard
+`/etc/nagios/nrpe.cfg` file (or a different) file is passed as
+argument and recursively from files and directories included with the
+`include` and `include_dir` directives.
 
-This script can be used in another check, to let remote servers (tipically a nagios-like)
-ask which nrpe checks can be called on the host.
+This script can be used to let remote servers (tipically a
+nagios-like server) ask which nrpe checks can be invoked on the host.
 
 Eg.:
 

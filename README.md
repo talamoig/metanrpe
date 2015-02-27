@@ -6,10 +6,9 @@ on localhost. The checks are obtained from the standard
 recursively from files and directories included with the
 `include` and `include_dir` directives.
 
-This script can be used to let remote servers (tipically a
-nagios-like server) ask which nrpe checks can be invoked on the host.
-
-Eg.:
+If the script itself is installed as a nrpe check, it can be used
+from a remote host (tipically a nagios server) to ask which nrpe
+checks can be invoked on the host, in the following way:
 
 	nagios-server # /usr/lib64/nagios/plugins/check_nrpe -H remote-host -c metanrpe
 	check_nis
